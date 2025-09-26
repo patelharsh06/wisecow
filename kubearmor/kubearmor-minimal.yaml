@@ -1,0 +1,40 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: kubearmor
+
+---
+
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: kubearmor
+  namespace: kubearmor
+spec:
+  selector:
+    matchLabels:
+      app: kubearmor
+  template:
+    metadata:
+      labels:
+        app: kubearmor
+    spec:
+      hostPID: true
+      containers:
+        - name: kubearmor
+          image: kubearmor/kubearmor:latest
+          securityContext:
+            privileged: true
+          volumeMounts:
+            - name: dev
+              mountPath: /dev
+            - name: proc
+              mountPath: /host/proc
+              readOnly: true
+      volumes:
+        - name: dev
+          hostPath:
+            path: /dev
+        - name: proc
+          hostPath:
+            path: /proc

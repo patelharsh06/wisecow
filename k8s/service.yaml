@@ -4,9 +4,9 @@ metadata:
   name: wisecow-service
 spec:
   selector:
-    app: wisecow                 # Select pods with label app=wisecow
+    app: wisecow                 
   ports:
     - protocol: TCP
-      port: 4499                # Service port exposed inside cluster
-      targetPort: 4499          # Forward to pod container port 4499
-  type: ClusterIP               # Internal service, use NodePort or LoadBalancer for external access
+      port: 4499                
+      targetPort: 4499          
+  type: ClusterIP               

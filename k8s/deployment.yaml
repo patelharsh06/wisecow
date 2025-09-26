@@ -3,17 +3,17 @@ kind: Deployment
 metadata:
   name: wisecow-deployment
 spec:
-  replicas: 1                        # Number of pod replicas
+  replicas: 1                        
   selector:
     matchLabels:
-      app: wisecow                 # Matches pods with label app=wisecow
+      app: wisecow                 
   template:
     metadata:
       labels:
-        app: wisecow               # Pod label
+        app: wisecow               
     spec:
       containers:
       - name: wisecow
-        image: harshpatel04/wisecow:latest  # Your Docker image from Docker Hub
+        image: harshpatel04/wisecow:latest  
         ports:
-        - containerPort: 4499      # Container port that wisecow app serves on
+        - containerPort: 4499      
