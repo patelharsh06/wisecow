@@ -21,16 +21,16 @@ spec:
     spec:
       hostPID: true
       containers:
-        - name: kubearmor
-          image: kubearmor/kubearmor:latest
-          securityContext:
-            privileged: true
-          volumeMounts:
-            - name: dev
-              mountPath: /dev
-            - name: proc
-              mountPath: /host/proc
-              readOnly: true
+      - name: kubearmor
+        image: kubearmor/kubearmor:latest
+        securityContext:
+          privileged: true
+        volumeMounts:
+          - name: dev
+            mountPath: /dev
+          - name: proc
+            mountPath: /host/proc
+            readOnly: true
       volumes:
         - name: dev
           hostPath:

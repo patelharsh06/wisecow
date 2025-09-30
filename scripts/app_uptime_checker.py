@@ -11,6 +11,5 @@ def check_app_uptime(url):
         print(f"Application DOWN. Error: {e}")
 
 if __name__ == "__main__":
-    wisecow_url = "http://localhost:4499"  
+    wisecow_url = "http://localhost:4499"
     check_app_uptime(wisecow_url)
-

@@ -9,6 +9,6 @@ spec:
       app: wisecow
   file:
     matchPaths:
-      - path: /app
-        action: Block
-        severity: 5
+    - path: /app
+      action: Block
+      severity: 5
